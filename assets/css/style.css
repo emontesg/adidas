@@ -1,25 +1,216 @@
 * {
 	padding:0;
 	margin:0;
+	background-color: grey;
+
 }
-
-
+@font-face {
+    font-family: GothamBlack;
+    src: url('../fonts/Gotham-Black.otf'); /* Legacy iOS */
+}
+@font-face {
+    font-family: Gotham;
+    src: url('../fonts/Gotham-Bold.otf'); /* Legacy iOS */
+}
+@font-face {
+    font-family: GothamBook;
+    src: url('../fonts/Gotham-Book.otf'); /* Legacy iOS */
+}
 .container {
+	text-align: center;
 	width: 640px;
 	margin:0 auto;
 }
 
+.cont-loader{
+ text-align: center;
+}
+.descuento{
 
+}
 #start-button {
 	display: none;
 }
-
-
+.run a {
+	color: #fff;
+}
 .hidden {
 	display: none;
 }
+.title{
+	margin-top: 50px;
+	font-family: Gotham;
+	text-align: center;
+}
+h3{
+	font-family: GothamBook;
+	color: #fff;
+}
+h4{
+	font-family: GothamBook;
 
-
+}
+.start{
+	margin-top: 50px;
+	text-align: center;
+}
+.run{
+	font-family: GothamBlack;
+	font-size: 20px;
+	background-color: transparent;
+	margin-top: 20px;
+	height: 60px;
+	width: 260px;
+	border: 2px solid #fff;
+	color: #fff;
+}
+#my-discount{
+	padding-top: 30px;
+}
+#my{
+	padding-top: 30px;
+}
+#porc{
+	font-size: 32px;
+}
+h1{
+	font-family: Gotham;
+	font-size: 56px;
+}
+h2{
+	color: #fff;
+	font-family: Gotham;
+	font-size: 76px;
+}
 .your-discount-holder {
 	font-size:150%;
+}
+.header{
+	text-align: center;
+	height: 180px;
+	background: #000;
+
+}
+#disc{
+		display: none;
+}
+.header img{
+	background: #000;
+	margin-top: 55px;
+	height: 70px;
+	width: 100px;
+}
+.loader{
+	text-align: center;
+}
+
+.dos{
+	position: absolute;
+	margin-left: -137px;
+	display: none;
+}
+.tres{
+	position: absolute;
+	margin-left: -137px;
+	display: none;
+}
+html, body{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+a{
+  text-decoration: none;
+}
+
+/* GRID */
+
+.twelve { width: 100%; }
+.eleven { width: 91.53%; }
+.ten { width: 83.06%; }
+.nine { width: 74.6%; }
+.eight { width: 66.13%; }
+.seven { width: 57.66%; }
+.six { width: 49.2%; }
+.five { width: 40.73%; }
+.four { width: 32.26%; }
+.three { width: 23.8%; }
+.two { width: 15.33%; }
+.one { width: 6.866%; }
+
+/* COLUMNS */
+
+.col {
+	display: block;
+	float:left;
+	margin: 1% 0 1% 1.6%;
+}
+
+.col:first-of-type {
+  margin-left: 0;
+}
+
+.container{
+  width: 100%;
+  max-width: 940px;
+  margin: 0 auto;
+  position: relative;
+  text-align: center;
+}
+
+
+.text{
+	margin-top: 50px;
+}
+/* ALL LOADERS */
+
+.loader{
+	z-index: 88;
+  width: 140px;
+  height: 140px;
+  border-radius: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+
+/* LOADER 1 */
+
+#loader-1:before, #loader-1:after{
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 100%;
+  height: 100%;
+  border-radius: 90%;
+  border: 10px solid transparent;
+  border-top-color: #fff;
+}
+
+#loader-1:before{
+  z-index: 100;
+  animation: spin 1s infinite;
+}
+
+#loader-1:after{
+  border: 10px solid #ccc;
+}
+
+@keyframes spin{
+  0%{
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  100%{
+    -webkit-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
 }

@@ -1,5 +1,3 @@
-
-
 var app = {};
 
 if(config) {
@@ -33,14 +31,34 @@ app.initialize = function() {
 };
 
 app.startApp = function() {
+  alert('hola');
     if (app.allowStartButton) {
         console.log('running started');
-         getHtmlEl('my-discount').innerHTML = 0 + " %";
-         app.hideStartButton();
-        app.intervalId = setInterval(function(){
+        setTimeout(function () {
+        getHtmlEl('del').innerHTML = " ";
+          getHtmlEl('my').innerHTML = "2";
+          getHtmlEl('voice').innerHTML = "¡LISTOS!";
+          setTimeout(function () {
+            getHtmlEl('voice').innerHTML = "¡FUERA!";
+             getHtmlEl('del').innerHTML = " ";
+              getHtmlEl('my').innerHTML = "3";
+              setTimeout(function(){
+                document.getElementById('count').style.display = "none";
+                document.getElementById('disc').style.display = "block";
+                getHtmlEl('del').innerHTML = "DESCUENTO";
+                getHtmlEl('voice').innerHTML = "GANADO";
+                getHtmlEl('my-discount').innerHTML = 0 + " ";
+                app.hideStartButton();
+                app.intervalId = setInterval(function(){
 
-           app.showDetails();
-        },config.timeout*1000);
+                   app.showDetails();
+                },config.timeout*1000);
+              }, 2000);
+
+           }, 2000);
+       }, 2000);
+
+
     }
 }
 
@@ -59,6 +77,7 @@ app.getCurrentPosition = function() {
 
 
 app.startRunning = function() {
+
     app.hideStartButton();
     app.countDistance();
 }
@@ -101,26 +120,26 @@ app.countDistance = function() {
         if(sum < 2) {
           app.totalDistance = 0;
         }
-        console.log(sum);
+        console.log("distancia: "+sum);
     }
 }
 
 
  app.displayStartButton = function() {
     if(!app.firstTime) {
-     getHtmlEl('start-button').style.display = "block";
+      //getHtmlEl('start-button').style.display = "block";
      console.log('block');
    }
  }
 
   app.hideStartButton = function() {
-     getHtmlEl('start-button').style.display = "none";
+     //getHtmlEl('start-button').style.display = "none";
      app.firstTime = true;
      console.log('none');
  }
 
  app.showDetails = function() {
-
+    console.log('esteban');
     if(typeof app.positionObserver.coords !== 'undefined') {
 
         app.measurePoints[app.updatesCounter] = app.positionObserver.coords;
@@ -195,6 +214,21 @@ function moveArrayElementsToTheLeft(_array, newValue) {
     var doc = document.getElementById(documentId);
     return doc;
  }
+ function runPreloader(){
+   setTimeout(function () {
+   getHtmlEl('del').innerHTML = " ";
+     getHtmlEl('my').innerHTML = "2";
+     getHtmlEl('voice').innerHTML = "¡LISTOS!";
+     setTimeout(function () {
+       getHtmlEl('voice').innerHTML = "¡FUERA!";
+        getHtmlEl('del').innerHTML = " ";
+         getHtmlEl('my').innerHTML = "3";
+
+      }, 2000);
+  }, 2000);
+
+ }
+
 
 
  function sumArrayValues(_array) {
@@ -204,4 +238,9 @@ function moveArrayElementsToTheLeft(_array, newValue) {
         sum = sum+_array[i];
      }
      return sum;
+ }
+ function goStep2(){
+   getHtmlEl('step1').style.display = "none";
+   getHtmlEl('step2').style.display = "block";
+   app.startApp();
  }
